@@ -16,6 +16,7 @@
                     <li><a href="index.php?action=signup">S'inscrire</a></li>
                     <li><a href="index.php?action=login">Connexion</a></li>
                 <?php } else { ?>
+                    <li><a href="index.php?action=article_new">Écrire un article</a></li>
                     <li><a href="index.php?action=action_logout">Déconnexion (<?=$user['username']?>)</a></li>
                 <?php } ?>
             </ul>
