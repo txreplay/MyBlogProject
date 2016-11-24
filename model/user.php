@@ -1,8 +1,8 @@
 <?php
 
-function user_find_by_id($id)
+function user_find_one_by_id($field, $value)
 {
-    $query = 'SELECT `id`, `username`, `email` FROM `users` WHERE `id`='.my_escape($id);
+    $query = 'SELECT `id`, `username`, `email` FROM `users` WHERE `'.$field.'`='.my_escape($value);
 
     $result = my_fetch_one($query);
 
@@ -30,7 +30,7 @@ function user_auth($username, $password, $salt)
 
 function user_signup($username, $email, $password, $salt)
 {
-    $query = 'INSERT INTO `users` (`username`, `email`, `password`)VALUES (\''.my_escape($username).'\', \''.my_escape($email).'\', \''.sha1($password.$salt).'\')';
+    $query = 'INSERT INTO `users` (`username`, `email`, `password`, `role_id`)VALUES (\''.my_escape($username).'\', \''.my_escape($email).'\', \''.sha1($password.$salt).'\', \'4\')';
 
     my_query($query);
 }
