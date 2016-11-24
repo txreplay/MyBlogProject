@@ -5,7 +5,7 @@ require_once 'model/article.php';
 $errors = check_save();
 
 if (empty($errors)) {
-    article_save($_POST['title'], $_POST['content']);
+    article_save($_POST['title'], $_POST['content'], $user['id'], 1, $_POST['status']);
 
     $message = 'Article créé !';
     $template = 'homepage';
