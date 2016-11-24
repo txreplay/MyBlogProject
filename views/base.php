@@ -12,8 +12,8 @@
         <h1><a href="index.php">MyBlogProject</a></h1>
         <nav>
             <ul>
-                <li><a href="index.php?action=signup">S'inscrire</a></li>
                 <?php if (!key_exists('user', $_SESSION)) { ?>
+                    <li><a href="index.php?action=signup">S'inscrire</a></li>
                     <li><a href="index.php?action=login">Connexion</a></li>
                 <?php } else { ?>
                     <li><a href="index.php?action=action_logout">Déconnexion (<?=$user['username']?>)</a></li>
