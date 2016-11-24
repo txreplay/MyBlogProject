@@ -5,3 +5,5 @@
 ?>
 
 <h2>Homepage</h2>
+
+<?php include 'articles_list.php'; ?>

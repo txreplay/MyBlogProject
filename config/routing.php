@@ -2,7 +2,7 @@
 
 // List all routes
 $existing_routes = [
-    'homepage', 'login', 'signup', 'article_new', 'article_single'
+    'homepage', 'login', 'signup', 'article_new', 'articles_list', 'article_single'
 ];
 
 // List all actions
