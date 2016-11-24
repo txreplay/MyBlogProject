@@ -33,5 +33,13 @@ function check_signup()
         $errors['password_repeat'] = "Les mots de passe ne correspondent pas.";
     }
 
+    if (user_find_one_by('email', $_POST['email']) != false ) {
+        $errors['email_exist'] = "L'adresse e-mail ".$_POST['email']." existe déjà.";
+    }
+
+    if (user_find_one_by('username', $_POST['username']) != false ) {
+        $errors['username_exist'] = "Le nom d'utilisateur ".$_POST['username']." existe déjà.";
+    }
+
     return $errors;
 }

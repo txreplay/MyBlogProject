@@ -1,8 +1,8 @@
 <?php
 
-function user_find_one_by_id($field, $value)
+function user_find_one_by($field, $value)
 {
-    $query = 'SELECT `id`, `username`, `email` FROM `users` WHERE `'.$field.'`='.my_escape($value);
+    $query = 'SELECT `id`, `username`, `email` FROM `users` WHERE `'.$field.'`=\''.my_escape($value).'\'';
 
     $result = my_fetch_one($query);
 
