@@ -17,9 +17,7 @@ if (file_exists('controller/'.$action.'.php')) {
 $role_user = (isset($user) && !is_null($user) ? $user['role_id'] : 5);
 
 if (array_key_exists('min_access', $action_params)) {
-    if (intval($action_params['min_access']) >= intval($role_user)) {
-        var_dump($action_params['min_access'], intval($role_user));
-    } else {
+    if (intval($action_params['min_access']) <= intval($role_user)) {
         $message = [
             'type' => 'error',
             'title' => 'Accès refusé',

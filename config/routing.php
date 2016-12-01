@@ -37,7 +37,11 @@ if (!empty($_GET['action'])) {
     } elseif (array_key_exists($_GET['action'], $existing_actions)) {
         $action = $_GET['action'];
     } else {
-        $message = 'Cette route n\'existe pas.';
+        $message = [
+            'type' => 'error',
+            'title' => 'Erreur 404',
+            'text' => 'Cette page n\'existe pas.'
+        ];
     }
 }
 
