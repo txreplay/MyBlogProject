@@ -17,6 +17,10 @@ $existing_routes = [
     ],
     'articles_list' => [],
     'article_single' => [],
+    'profile_show' => [],
+    'profile_edit' => [
+        'min_access' => 4
+    ]
 ];
 
 // List all actions
@@ -28,6 +32,9 @@ $existing_actions = [
     'action_article_new' => [
         'min_access' => 3
     ],
+    'profile_edit' => [
+        'min_access' => 4
+    ]
 ];
 
 if (!empty($_GET['action'])) {

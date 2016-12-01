@@ -41,7 +41,7 @@
                         <li>
                             <a href="javascript:void(0)" class="submenu-owner"><?=$user['username']?> <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
                             <ul class="submenu">
-                                <li><a href="index.php">Mon compte</a></li>
+                                <li><a href="index.php?action=profile_show&id=<?=$user['id']?>">Mon compte</a></li>
                                 <li><a href="index.php?action=action_logout">Déconnexion</a></li>
                             </ul>
                         </li>

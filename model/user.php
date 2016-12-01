@@ -16,7 +16,7 @@ function user_find_one_by($field, $value)
 
 function user_auth($username, $password, $salt)
 {
-    $query = 'SELECT `id`, `username`, `email` FROM `users` WHERE `username`=\''.my_escape($username).'\' AND `password`=\''.sha1($password.$salt).'\'';
+    $query = 'SELECT id, username, email, role_id FROM `users` WHERE `username`=\''.my_escape($username).'\' AND `password`=\''.sha1($password.$salt).'\'';
 
     $result = my_fetch_one($query);
 
