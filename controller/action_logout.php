@@ -3,5 +3,10 @@
 unset($_SESSION['user']);
 session_destroy();
 
-$message = 'Vous avez été déconnecté';
+$message = [
+    'type' => 'error',
+    'title' => 'Déconnexion',
+    'text' => 'Vous avez été déconnecté'
+];
+
 $template = 'homepage';

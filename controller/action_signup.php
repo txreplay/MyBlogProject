@@ -7,7 +7,11 @@ $errors = check_signup();
 if (empty($errors)) {
     user_signup($_POST['username'], $_POST['email'], $_POST['password'], $salt);
 
-    $message = 'Inscription réussie !';
+    $message = [
+        'type' => 'success',
+        'title' => 'OK',
+        'text' => 'Inscription réussie !'
+    ];
     $template = 'homepage';
 } else {
     $template = 'signup';

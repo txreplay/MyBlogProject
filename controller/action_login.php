@@ -8,6 +8,12 @@ if (!$user) {
     $template = 'login';
 } else {
     $_SESSION['user'] = $user['id'];
+
+    $message = [
+        'type' => 'success',
+        'text' => 'Connexion réussie',
+        'title' => 'Bienvenue ' . $user['username']
+    ];
     $template = 'homepage';
 }
 

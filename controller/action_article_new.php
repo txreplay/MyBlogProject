@@ -7,7 +7,11 @@ $errors = check_save();
 if (empty($errors)) {
     article_save($_POST['title'], $_POST['content'], $user['id'], 1, $_POST['status']);
 
-    $message = 'Article créé !';
+    $message = [
+        'type' => 'success',
+        'title' => 'OK',
+        'text' => 'Article créé !'
+    ];
     $template = 'homepage';
 } else {
     $template = 'article_new';
