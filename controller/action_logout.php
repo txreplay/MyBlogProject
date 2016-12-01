@@ -4,7 +4,7 @@ unset($_SESSION['user']);
 session_destroy();
 
 $message = [
-    'type' => 'error',
+    'type' => 'warning',
     'title' => 'Déconnexion',
     'text' => 'Vous avez été déconnecté'
 ];

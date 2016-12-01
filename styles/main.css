@@ -5,7 +5,7 @@
     top: 50px;
     left: -40px;
     padding-left: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .main-menu .submenu li {
@@ -13,9 +13,11 @@
     padding: 5px 0;
 }
 
-.main-menu .submenu li:last-child {
-    border-bottom: none;
+.main-menu .submenu li a {
+    color: white !important;
 }
+
+.main-menu .submenu li:last-child { border-bottom: none; }
 
 .site-heading .logo {
     width: 100%;

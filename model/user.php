@@ -2,7 +2,7 @@
 
 function user_find_one_by($field, $value)
 {
-    $query = 'SELECT `id`, `username`, `email` FROM `users` WHERE `'.$field.'`=\''.my_escape($value).'\'';
+    $query = 'SELECT id, username, email, role_id FROM `users` WHERE `'.$field.'`=\''.my_escape($value).'\'';
 
     $result = my_fetch_one($query);
 
