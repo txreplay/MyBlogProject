@@ -18,12 +18,26 @@ if (file_exists('controller/'.$action.'.php')) {
 
 $role_user = (isset($user) && !is_null($user) ? $user['role_id'] : 5);
 
+// Max role (for login and signup)
+if (array_key_exists('max_access', $action_params)) {
+    if (intval($action_params['max_access']) >= intval($role_user)) {
+        $message = [
+            'type'  => 'error',
+            'title' => 'Accès refusé',
+            'text'  => 'Désolé, vous ne disposez pas des autorisations nécessaires.'
+        ];
+
+        $template = 'homepage';
+    }
+}
+
+// Min role (to post articles or admin stuff)
 if (array_key_exists('min_access', $action_params)) {
     if (intval($action_params['min_access']) <= intval($role_user)) {
         $message = [
-            'type' => 'error',
+            'type'  => 'error',
             'title' => 'Accès refusé',
-            'text' => 'Désolé, vous ne disposez pas des autorisations nécessaires.'
+            'text'  => 'Désolé, vous ne disposez pas des autorisations nécessaires.'
         ];
 
         $template = 'homepage';

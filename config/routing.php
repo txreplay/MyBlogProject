@@ -10,8 +10,12 @@
 // List all routes
 $existing_routes = [
     'homepage' => [],
-    'login' => [],
-    'signup' => [],
+    'login' => [
+        'max_access' => 4
+    ],
+    'signup' => [
+        'max_access' => 4
+    ],
     'article_new' => [
         'min_access' => 3
     ],
@@ -38,9 +42,12 @@ $existing_actions = [
 ];
 
 if (!empty($_GET['action'])) {
+    // Check if route exist
     if (array_key_exists($_GET['action'], $existing_routes)) {
         $action = $_GET['action'];
         $action_params = $existing_routes[$_GET['action']];
+
+    // Check if action exist
     } elseif (array_key_exists($_GET['action'], $existing_actions)) {
         $action = $_GET['action'];
     } else {
