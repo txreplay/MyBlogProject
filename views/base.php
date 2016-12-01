@@ -32,13 +32,19 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right main-menu">
                     <?php if (!key_exists('user', $_SESSION)) { ?>
                         <li><a href="index.php?action=signup">S'inscrire</a></li>
                         <li><a href="index.php?action=login">Connexion</a></li>
                     <?php } else { ?>
                         <li><a href="index.php?action=article_new">Écrire un article</a></li>
-                        <li><a href="index.php?action=action_logout">Déconnexion (<?=$user['username']?>)</a></li>
+                        <li>
+                            <a href="javascript:void(0)" class="submenu-owner"><?=$user['username']?> <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                            <ul class="submenu">
+                                <li><a href="index.php">Mon compte</a></li>
+                                <li><a href="index.php?action=action_logout">Déconnexion</a></li>
+                            </ul>
+                        </li>
                     <?php } ?>
                 </ul>
             </div>
@@ -95,5 +101,13 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        $(document).ready(function() {
+            $('.submenu-owner').click(function() {
+                $('.submenu').fadeToggle();
+            });
+        });
+    </script>
 </body>
 </html>
