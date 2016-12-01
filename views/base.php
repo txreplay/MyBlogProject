@@ -28,10 +28,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.php">
-                    <img src="images/logo-white.png" class="logo-white" alt="Logo">
-                    <img src="images/logo-black.png" class="logo-black" alt="Logo">
-                </a>
+                <a class="navbar-brand" href="index.php">MyKittenBlog</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -52,7 +49,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>MyKittyBlog</h1>
+                        <h1><img src="images/logo-white.png" class="logo" alt="Logo"></h1>
                         <hr class="small">
                         <span class="subheading">A sweet blog about kittens.</span>
                     </div>
