@@ -14,8 +14,7 @@ if (isset($message)) {
                     <small><a href="index.php?action=profile_edit&id=<?=$user['id']?>" title="Modifier mon profil"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></small>
             <?php } ?>
             </h2>
-            <h3><small>Inscris le 24 Septembre 2014.</small></h3>
-
+            <h3><small>Inscris le <?=strftime('%d %B %G', strtotime($profile['created'])); ?>.</small></h3>
         </div>
     </div>
 </div>

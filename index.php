@@ -2,6 +2,8 @@
 
 session_start();
 
+setlocale(LC_TIME, "fr_FR");
+
 require_once 'config/parameters.php';
 require_once 'config/routing.php';
 require_once 'config/functions.php';
