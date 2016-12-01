@@ -1,0 +1,23 @@
+{
+  "name": "MyBlogProject",
+  "homepage": "https://github.com/TxReplay/MyBlogProject",
+  "authors": [
+    "Valentin Commenge <txreplay@gmail.com>"
+  ],
+  "description": "PHP-procedural MVC Blog",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "izitoast": "^1.0.2"
+  }
+}

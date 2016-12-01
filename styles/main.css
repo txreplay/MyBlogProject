@@ -1,0 +1,25 @@
+.navbar-brand {
+    max-width: 120px;
+}
+
+.navbar-brand img {
+    width: 100%;
+}
+
+.navbar-brand img.logo-black {
+    display: none;
+}
+
+@media only screen and (max-width:768px) {
+    .navbar-brand {
+        max-width: 80px;
+    }
+
+    .navbar-brand img.logo-black {
+        display: block;
+    }
+
+    .navbar-brand img.logo-white {
+        display: none;
+    }
+}
