@@ -93,5 +93,32 @@
             </div>
         </div>
     </footer>
+    <script>
+        (function() {
+            iziToast.info({
+                title: "Layout",
+                message: "<?php echo 'views/'.$layout.'.php' ?>",
+                position: 'bottomLeft',
+                layout: 2,
+                timeout: 10000
+            });
+
+            iziToast.info({
+                title: "Action",
+                message: "<?php echo 'controller/'.$action.'.php' ?>",
+                position: 'bottomLeft',
+                layout: 2,
+                timeout: 10000
+            });
+
+            iziToast.info({
+                title: "Template",
+                message: "<?php echo 'views/'.$template.'.php' ?>",
+                position: 'bottomLeft',
+                layout: 2,
+                timeout: 10000
+            });
+        })();
+    </script>
 </body>
 </html>

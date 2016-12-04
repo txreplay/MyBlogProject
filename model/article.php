@@ -25,7 +25,7 @@ function article_find_one_by($field, $value)
 
 function article_find_all()
 {
-    $query = 'SELECT a.id as article_id, a.title as article_title, a.chapeau as article_chapeau, a.content as article_content, a.created as article_created, a.updated as article_updated, a.slug as article_slug, a.status as article_status, u.id as user_id, u.username as user_username FROM `articles` AS a JOIN `users` as u ON a.user_id = u.id WHERE a.status=\'1\'';
+    $query = 'SELECT a.id as article_id, a.title as article_title, a.chapeau as article_chapeau, a.content as article_content, a.created as article_created, a.updated as article_updated, a.slug as article_slug, a.status as article_status, u.id as user_id, u.username as user_username FROM `articles` AS a JOIN `users` as u ON a.user_id = u.id WHERE a.status=\'1\' ORDER BY a.id DESC';
 
     $result = my_fetch_all($query);
 
