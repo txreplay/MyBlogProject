@@ -8,6 +8,7 @@ if (isset($message)) {
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="<?=$gravatar?>" class="avatar" alt="Votre photo de profil">
             <h2>
                 <?=$profile['username']?>
                 <?php if ($profile['id'] === $user['id']) { ?>

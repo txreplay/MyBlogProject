@@ -27,3 +27,7 @@
 .container h2 {
     margin-bottom: 30px;
 }
+
+.avatar {
+    float: right;
+}
