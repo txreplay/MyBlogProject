@@ -4,6 +4,7 @@ require_once 'model/user.php';
 
 $profile = user_find_one_by('id', $_GET['id']);
 $gravatar = get_gravatar($profile['email'], 200, 'mm', 'g', false, []);
+$articles = article_find_by_author($_GET['id']);
 
 /**
  * Get either a Gravatar URL or complete image tag for a specified email address.
