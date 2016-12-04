@@ -35,7 +35,7 @@
 </div>
 
 <script>
-    $(document).ready(function(){
+    (function() {
         <?php
             if (isset($errors)) {
                 foreach ($errors as $key => $error):
@@ -52,5 +52,5 @@
                 endforeach;
             }
         ?>
-    });
+    })();
 </script>

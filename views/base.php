@@ -15,9 +15,6 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="javascript/clean-blog.min.js"></script>
     <script src="bower_components/izitoast/dist/js/iziToast.min.js" type="text/javascript"></script>
 </head>
 <body>
@@ -38,13 +35,8 @@
                         <li><a href="index.php?action=login">Connexion</a></li>
                     <?php } else { ?>
                         <li><a href="index.php?action=article_new">Écrire un article</a></li>
-                        <li>
-                            <a href="javascript:void(0)" class="submenu-owner"><?=$user['username']?> <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                            <ul class="submenu">
-                                <li><a href="index.php?action=profile_show&id=<?=$user['id']?>">Mon compte</a></li>
-                                <li><a href="index.php?action=action_logout">Déconnexion</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="index.php?action=profile_show&id=<?=$user['id']?>">Mon compte</a></li>
+                        <li><a href="index.php?action=action_logout">Déconnexion</a></li>
                     <?php } ?>
                 </ul>
             </div>
@@ -101,13 +93,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        $(document).ready(function() {
-            $('.submenu-owner').click(function() {
-                $('.submenu').fadeToggle();
-            });
-        });
-    </script>
 </body>
 </html>
