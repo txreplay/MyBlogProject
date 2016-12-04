@@ -15,8 +15,13 @@
                         <input type="email" class="form-control" readonly disabled name="email" value="<?php if (isset($_POST['email'])) { echo $_POST['email']; } else { echo $profile['email']; } ?>" id="email" placeholder="Votre adresse e-mail">
                     </div>
                 </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label for="description">Description</label>
+                        <textarea name="description" class="form-control" cols="30" rows="10" id="description" placeholder="Description"><?php if (isset($_POST['description'])) { echo $_POST['description']; } else { echo $profile['description'];} ?></textarea>
+                    </div>
+                </div>
                 <br>
-                <div id="success"></div>
                 <div class="row">
                     <div class="form-group col-xs-12">
                         <input type="submit" class="btn btn-default" value="Mettre à jour">

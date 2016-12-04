@@ -2,7 +2,7 @@
 
 function user_find_one_by($field, $value)
 {
-    $query = 'SELECT id, username, email, role_id, created, updated FROM `users` WHERE `'.$field.'`=\''.my_escape($value).'\'';
+    $query = 'SELECT id, username, description, email, role_id, created, updated FROM `users` WHERE `'.$field.'`=\''.my_escape($value).'\'';
 
     $result = my_fetch_one($query);
 
@@ -35,9 +35,9 @@ function user_signup($username, $email, $password, $salt)
     my_query($query);
 }
 
-function user_update($user_id, $username)
+function user_update($user_id, $username, $description)
 {
-    $query = 'UPDATE `users` SET username=\''.my_escape($username).'\', updated=\''.date("Y-m-d H:i:s").'\' WHERE id=\''.$user_id.'\'';
+    $query = 'UPDATE `users` SET username=\''.my_escape($username).'\', updated=\''.date("Y-m-d H:i:s").'\', description=\''.my_escape($description).'\' WHERE id=\''.$user_id.'\'';
 
     return my_query($query);
 }

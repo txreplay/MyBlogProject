@@ -4,8 +4,11 @@ require_once 'model/user.php';
 
 $update = check_update($user);
 
-if ($update === true) {
+$id = $user['id'];
+$profile = user_find_one_by('id', $id);
+$gravatar = get_gravatar($profile['email'], 200, 'mm', 'g', false, []);
 
+if ($update === true) {
     $message = [
         'type' => 'success',
         'title' => 'OK',
@@ -13,10 +16,6 @@ if ($update === true) {
     ];
 
     $template = 'profile_show';
-    $id = $user['id'];
-    $profile = user_find_one_by('id', $id);
-    $gravatar = get_gravatar($profile['email'], 200, 'mm', 'g', false, []);
-
 } else {
     $template = 'profile_edit';
 }
@@ -29,7 +28,9 @@ function check_update($user)
         $errors['username'] = "Nom d'utilisateur obligatoire";
     }
 
-    if (user_find_one_by('username', $_POST['username']) != false ) {
+    $username_check = user_find_one_by('username', $_POST['username']);
+
+    if ($username_check != false && $user['id'] != $username_check['id']) {
         $errors['username_exist'] = "Le nom d'utilisateur ".$_POST['username']." existe déjà.";
     }
 
@@ -37,5 +38,5 @@ function check_update($user)
         return false;
     }
 
-    return user_update($user['id'], $_POST['username']);
+    return user_update($user['id'], $_POST['username'], $_POST['description']);
 }

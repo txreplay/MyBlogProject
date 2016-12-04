@@ -9,9 +9,12 @@
             <?php } ?>
             </h2>
             <h3><small>Inscris le <?=strftime('%d %B %G', strtotime($profile['created'])); ?>.</small></h3>
+            <?php if (!is_null($profile['description'])) { ?>
+            <p><strong>Description: <br></strong><?=$profile['description']?></p>
+            <?php } ?>
         </div>
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <p>Articles de <?=$profile['username']?> :</p>
+            <p><strong>Articles de <?=$profile['username']?> :</strong></p>
 
             <?php include 'partials/articles_list.php'; ?>
         </div>
