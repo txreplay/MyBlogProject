@@ -36,7 +36,7 @@ $existing_actions = [
     'action_article_new' => [
         'min_access' => 3
     ],
-    'profile_edit' => [
+    'action_profile_edit' => [
         'min_access' => 4
     ]
 ];

@@ -8,7 +8,7 @@
                 <?=$article['article_title']?>
             </h2>
             <h3 class="post-subtitle">
-                Problems look mighty small from 150 miles up
+                <?=$article['article_chapeau']?>
             </h3>
         </a>
         <p class="post-meta">Posté par <a href="index.php?action=profile_show&id=<?=$article['user_id']?>"><?=$article['user_username']?></a> le  <?=$article['article_created']?></p>

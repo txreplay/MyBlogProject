@@ -34,3 +34,10 @@ function user_signup($username, $email, $password, $salt)
 
     my_query($query);
 }
+
+function user_update($user_id, $username)
+{
+    $query = 'UPDATE `users` SET username=\''.my_escape($username).'\', updated=\''.date("Y-m-d H:i:s").'\' WHERE id=\''.$user_id.'\'';
+
+    return my_query($query);
+}
