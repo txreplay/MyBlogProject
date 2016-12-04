@@ -7,8 +7,13 @@
     </div>
 
     <div>
+        <label for="chapeau">Chapeau de l'article</label>
+        <textarea name="chapeau" id="" cols="30" rows="10" id="chapeau" placeholder="Chapeau de l'article"><?php if (isset($_POST['chapeau'])) { echo 'value="'.$_POST['chapeau'].'"'; } ?></textarea>
+    </div>
+
+    <div>
         <label for="content">Contenu de l'article</label>
-        <textarea name="content" id="" cols="30" rows="10"id="content" placeholder="Contenu de l'article"><?php if (isset($_POST['content'])) { echo 'value="'.$_POST['content'].'"'; } ?></textarea>
+        <textarea name="content" id="" cols="30" rows="10" id="content" placeholder="Contenu de l'article"><?php if (isset($_POST['content'])) { echo 'value="'.$_POST['content'].'"'; } ?></textarea>
     </div>
 
     <div>
