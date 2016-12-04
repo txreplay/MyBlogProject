@@ -2,7 +2,8 @@
 
 function article_save($title, $chapeau, $content, $user_id, $category_id, $status)
 {
-    $query = 'INSERT INTO `articles` (`title`, `chapeau` `content`, `user_id`, `created`, `updated`, `slug`, `category_id`, `status`) VALUES (\''.my_escape($title).'\', \''.my_escape($chapeau).'\', \''.my_escape($content).'\', \''.my_escape($user_id).'\', \''.date("Y-m-d H:i:s").'\', \''.date("Y-m-d H:i:s").'\', \''.my_escape(my_slug($title)).'\', \''.my_escape($category_id).'\', \''.my_escape($status).'\')';
+    $query = 'INSERT INTO `articles` (`title`, `chapeau`, `content`, `user_id`, `created`, `updated`, `slug`, `category_id`, `status`) VALUES (\''.my_escape($title).'\', \''.my_escape($chapeau).'\', \''.my_escape($content).'\', \''.my_escape($user_id).'\', \''.date("Y-m-d H:i:s").'\', \''.date("Y-m-d H:i:s").'\', \''.my_escape(my_slug($title)).'\', \''.my_escape($category_id).'\', \''.my_escape($status).'\')';
+
     my_query($query);
 }
 

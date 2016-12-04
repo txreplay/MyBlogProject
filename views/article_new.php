@@ -19,7 +19,7 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label for="content">Contenu de l'article</label>
-                        <textarea name="content" class="form-control" id="" cols="30" rows="10" id="content" placeholder="Contenu de l'article"><?php if (isset($_POST['content'])) { echo $_POST['content']; } ?></textarea>
+                        <textarea name="content" class="form-control" cols="30" rows="10" id="content" placeholder="Contenu de l'article"><?php if (isset($_POST['content'])) { echo $_POST['content']; } ?></textarea>
                         </div>
                 </div>
                 <div class="row control-group">
@@ -64,4 +64,17 @@
         }
         ?>
     })();
+</script>
+<script src="bower_components/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: '#content',
+        menubar: false,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table contextmenu paste code'
+        ],
+        toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'
+    });
 </script>

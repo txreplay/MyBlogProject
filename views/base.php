@@ -55,7 +55,7 @@
             </div>
         </div>
     </header>
-    <div id="content">
+    <div id="content-template">
         <?php include 'views/'.$template.'.php'; ?>
     </div>
     <footer>
