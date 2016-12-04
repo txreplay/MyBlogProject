@@ -1,10 +1,3 @@
-<?php
-
-if (isset($message)) {
-    echo '<p>'.$message.'</p>';
-}
-?>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -33,3 +26,24 @@ if (isset($message)) {
         </div>
     </div>
 </div>
+
+<script>
+    (function() {
+        <?php
+        if (isset($errors)) {
+        foreach ($errors as $key => $error):
+        ?>
+        iziToast.error({
+            title: 'Erreur',
+            message: "<?php echo $error ?>",
+            position: 'topRight',
+            layout: 2,
+            color: 'red',
+            timeout: 10000
+        });
+        <?php
+        endforeach;
+        }
+        ?>
+    })();
+</script>
