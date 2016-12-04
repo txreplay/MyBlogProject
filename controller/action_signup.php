@@ -7,7 +7,11 @@ $errors = check_signup();
 if (empty($errors)) {
     user_signup($_POST['username'], $_POST['email'], $_POST['password'], $salt);
 
-    $message = 'Inscription réussie !';
+    $message = [
+        'type' => 'success',
+        'title' => 'OK',
+        'text' => 'Inscription réussie !'
+    ];
     $template = 'homepage';
 } else {
     $template = 'signup';
@@ -31,6 +35,10 @@ function check_signup()
 
     if(empty($_POST['password_repeat']) || strcmp($_POST['password'], $_POST['password_repeat']) != 0) {
         $errors['password_repeat'] = "Les mots de passe ne correspondent pas.";
+    }
+
+    if(!preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $_POST['email'])){
+        $errors['email_not_email'] = "L'adresse e-mail n'est pas valide.";
     }
 
     if (user_find_one_by('email', $_POST['email']) != false ) {
