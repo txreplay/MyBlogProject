@@ -10,6 +10,7 @@
             </h2>
             <h3><small>Inscris le <?=strftime('%d %B %G', strtotime($profile['created'])); ?>.</small></h3>
             <?php if (!is_null($profile['description'])) { ?>
+            <p><strong>Role: </strong><?=$profile['role_name']?></p>
             <p><strong>Description: <br></strong><?=$profile['description']?></p>
             <?php } ?>
         </div>

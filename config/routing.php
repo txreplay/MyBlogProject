@@ -24,6 +24,9 @@ $existing_routes = [
     'profile_show' => [],
     'profile_edit' => [
         'min_access' => 4
+    ],
+    'admin' => [
+        'min_access' => 2
     ]
 ];
 
@@ -38,6 +41,9 @@ $existing_actions = [
     ],
     'action_profile_edit' => [
         'min_access' => 4
+    ],
+    'action_admin' => [
+        'min_access' => 2
     ]
 ];
 

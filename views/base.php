@@ -34,6 +34,9 @@
                         <li><a href="index.php?action=signup">S'inscrire</a></li>
                         <li><a href="index.php?action=login">Connexion</a></li>
                     <?php } else { ?>
+                        <?php if ($user['role_id'] <= 2) { ?>
+                        <li><a href="index.php?action=admin">Admin</a></li>
+                        <?php } ?>
                         <li><a href="index.php?action=article_new">Écrire un article</a></li>
                         <li><a href="index.php?action=profile_show&id=<?=$user['id']?>">Mon compte</a></li>
                         <li><a href="index.php?action=action_logout">Déconnexion</a></li>
