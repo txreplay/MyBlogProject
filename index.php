@@ -33,7 +33,7 @@ if (array_key_exists('max_access', $action_params)) {
 
 // Min role (to post articles or admin stuff)
 if (array_key_exists('min_access', $action_params)) {
-    if (intval($action_params['min_access']) <= intval($role_user)) {
+    if (intval($action_params['min_access']) < intval($role_user)) {
         $message = [
             'type'  => 'error',
             'title' => 'Accès refusé',

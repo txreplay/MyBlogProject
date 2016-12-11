@@ -38,5 +38,9 @@ function check_update($user)
         return false;
     }
 
-    return user_update($user['id'], $_POST['username'], $_POST['description']);
+    if ($user['role_id'] <= 2) {
+        return user_update_admin($user['id'], $_POST['username'], $_POST['role'], $_POST['description']);
+    } else {
+        return user_update($user['id'], $_POST['username'], $_POST['description']);
+    }
 }

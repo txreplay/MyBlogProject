@@ -15,6 +15,19 @@
                         <input type="email" class="form-control" readonly disabled name="email" value="<?php if (isset($_POST['email'])) { echo $_POST['email']; } else { echo $profile['email']; } ?>" id="email" placeholder="Votre adresse e-mail">
                     </div>
                 </div>
+                <?php if ($user['role_id'] <= 2) { ?>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label for="role">Role</label>
+                            <select name="role" id="role">
+                                <option <?php if ($user['role_id'] == 1) { ?> selected="selected" <?php } ?> value="1">SUPER_ADMIN</option>
+                                <option <?php if ($user['role_id'] == 2) { ?> selected="selected" <?php } ?>value="2">ADMIN</option>
+                                <option <?php if ($user['role_id'] == 3) { ?> selected="selected" <?php } ?>value="3">BLOGGER</option>
+                                <option <?php if ($user['role_id'] == 4) { ?> selected="selected" <?php } ?>value="4">MEMBER</option>
+                            </select>
+                        </div>
+                    </div>
+                <?php } ?>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label for="description">Description</label>
