@@ -1,20 +1,19 @@
 <?php
 
 // Infos : ROLES
-// 1 : SUPER_ADMIN
-// 2 : ADMIN
-// 3 : BLOGGER
-// 4 : MEMBER
-// 5 : ANONYMOUS (Default)
+// 1 : ADMIN
+// 2 : BLOGGER
+// 3 : MEMBER
+// 4 : ANONYMOUS (Default)
 
 // List all routes
 $existing_routes = [
     'homepage' => [],
     'login' => [
-        'max_access' => 4
+        'max_access' => 3
     ],
     'signup' => [
-        'max_access' => 4
+        'max_access' => 3
     ],
     'article_new' => [
         'min_access' => 3
@@ -23,10 +22,10 @@ $existing_routes = [
     'article_single' => [],
     'profile_show' => [],
     'profile_edit' => [
-        'min_access' => 4
+        'min_access' => 3
     ],
     'admin' => [
-        'min_access' => 2
+        'min_access' => 1
     ]
 ];
 

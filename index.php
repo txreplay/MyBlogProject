@@ -24,7 +24,7 @@ if (array_key_exists('max_access', $action_params)) {
         $message = [
             'type'  => 'error',
             'title' => 'Accès refusé',
-            'text'  => 'Désolé, vous ne disposez pas des autorisations nécessaires.'
+            'text'  => 'Désolé, vous ne pouvez pas effectuer cette action lorsque vous êtes connecté.'
         ];
 
         $template = 'homepage';
