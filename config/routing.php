@@ -26,6 +26,9 @@ $existing_routes = [
     ],
     'admin' => [
         'min_access' => 1
+    ],
+    'article_edit' => [
+        'min_access' => 3
     ]
 ];
 
@@ -36,14 +39,17 @@ $existing_actions = [
     'action_logout' => [],
     'action_signup' => [],
     'action_article_new' => [
-        'min_access' => 3
+        'min_access' => 2
     ],
     'action_profile_edit' => [
-        'min_access' => 4
+        'min_access' => 3
     ],
     'action_admin' => [
-        'min_access' => 2
-    ]
+        'min_access' => 1
+    ],
+    'action_article_edit' => [
+        'min_access' => 3
+    ],
 ];
 
 if (!empty($_GET['action'])) {
