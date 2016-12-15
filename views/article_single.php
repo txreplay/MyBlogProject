@@ -4,7 +4,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h2 class="section-heading">
                     <?=$article['article_title']?>
-                    <?php if (isset($user) && $article['user_id'] === $user['id']) { ?>
+                    <?php if (isset($user) && $article['user_id'] === $user['id'] || $user['role_id'] == 1) { ?>
                         <small>
                             <a href="index.php?action=article_edit&id=<?=$article['article_id']?>" title="Modifier cet article"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                         </small>
