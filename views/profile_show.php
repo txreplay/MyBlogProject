@@ -17,7 +17,10 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <p><strong>Articles de <?=$profile['username']?> :</strong></p>
 
-            <?php include 'partials/articles_list.php'; ?>
+            <?php
+            $list_param = 'title';
+            include 'partials/articles_list.php';
+            ?>
         </div>
     </div>
 </div>

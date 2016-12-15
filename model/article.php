@@ -50,3 +50,9 @@ function article_find_by_author($user_id)
         return $result;
     }
 }
+
+function article_edit($article_id, $title, $chapeau, $content, $category_id, $status) {
+    $query = 'UPDATE `articles` SET title=\''.my_escape($title).'\', updated=\''.date("Y-m-d H:i:s").'\', chapeau=\''.my_escape($chapeau).'\', content=\''.my_escape($content).'\', category_id=\''.my_escape($category_id).'\', status=\''.my_escape($status).'\' WHERE id=\''.$article_id.'\'';
+
+    return my_query($query);
+}

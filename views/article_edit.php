@@ -1,43 +1,44 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <h2>Écrire un article</h2>
+            <h2>Modifier un article</h2>
 
-            <form action="index.php?action=action_article_new" method="post">
+            <form action="index.php?action=action_article_edit" method="post">
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label for="title">Titre de l'article</label>
-                        <input type="text" class="form-control" name="title" <?php if (isset($_POST['title'])) { echo 'value="'.$_POST['title'].'"'; } ?> id="title" placeholder="Titre de votre article">
+                        <input type="text" class="form-control" name="title" <?='value="'.$article['article_title'].'"'?> id="title" placeholder="Titre de votre article">
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label for="chapeau">Chapeau de l'article</label>
-                        <input type="text" class="form-control" name="chapeau" <?php if (isset($_POST['chapeau'])) { echo 'value="'.$_POST['chapeau'].'"'; } ?> id="chapeau" placeholder="Chapeau de votre article">
+                        <input type="text" class="form-control" name="chapeau" <?='value="'.$article['article_chapeau'].'"'?> id="title" placeholder="Chapeau de votre article">
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label for="content">Contenu de l'article</label>
-                        <textarea name="content" class="form-control" cols="30" rows="10" id="content" placeholder="Contenu de l'article"><?php if (isset($_POST['content'])) { echo $_POST['content']; } ?></textarea>
+                        <textarea name="content" class="form-control" cols="30" rows="10" id="content" placeholder="Contenu de l'article"><?=$article['article_content']?></textarea>
                         </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label for="status">Statut de l'article</label>
                         <select name="status" id="status">
-                            <option value="0">En préparation</option>
-                            <option value="1">Publié</option>
-                            <option value="2">Non-publié</option>
-                            <option value="3">Supprimé</option>
+                            <option <?php if ($article['article_status'] == 0) { ?> selected="selected" <?php } ?> value="0">En préparation</option>
+                            <option <?php if ($article['article_status'] == 1) { ?> selected="selected" <?php } ?> value="1">Publié</option>
+                            <option <?php if ($article['article_status'] == 2) { ?> selected="selected" <?php } ?> value="2">Non-publié</option>
+                            <option <?php if ($article['article_status'] == 3) { ?> selected="selected" <?php } ?> value="3">Supprimé</option>
                         </select>
                     </div>
                 </div>
+                <input type="hidden" name="id" id="id" value="<?=$article['article_id']?>">
                 <br>
                 <div id="success"></div>
                 <div class="row">
                     <div class="form-group col-xs-12">
-                        <input type="submit" class="btn btn-default" value="Poster">
+                        <input type="submit" class="btn btn-default" value="Modifier">
                     </div>
                 </div>
             </form>

@@ -44,7 +44,7 @@ function user_auth($username, $password, $salt)
 
 function user_signup($username, $email, $password, $salt)
 {
-    $query = 'INSERT INTO `users` (`username`, `email`, `password`, `role_id`, `created`, `updated`)VALUES (\''.my_escape($username).'\', \''.my_escape($email).'\', \''.sha1($password.$salt).'\', \'4\', \''.date("Y-m-d H:i:s").'\', \''.date("Y-m-d H:i:s").'\')';
+    $query = 'INSERT INTO `users` (`username`, `email`, `password`, `role_id`, `created`, `updated`)VALUES (\''.my_escape($username).'\', \''.my_escape($email).'\', \''.sha1($password.$salt).'\', \'3\', \''.date("Y-m-d H:i:s").'\', \''.date("Y-m-d H:i:s").'\')';
 
     my_query($query);
 }
